@@ -13,6 +13,7 @@
   --color-background-light: #f8f8f5;
   --color-background-dark: #221f10;
   --color-sunny-yellow: #FFD60A;
+  --color-shadow-yellow:rgba(255, 214, 10, 0.726);
   --color-sky-blue: #4CC9F0;
   --color-candy-pink: #F72585;
   --color-bright-purple: #7209B7;
@@ -54,10 +55,11 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --shadow-button: 0 6px 0 0 var(--color-shadow-yellow);
 }
 
 :root {
-  --background: oklch(1 0 0);
+  --background: #F0F4F8;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -145,4 +147,63 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  /* Mirror utility for elements that don't support RTL naturally */
+  .mirror-rtl {
+    @variant rtl {
+      transform: scaleX(-1);
+    }
+  }
+
+  /* For icons or images that should be flipped in RTL */
+  .rtl-flip {
+    @variant rtl {
+      transform: scaleX(-1);
+    }
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@variant rtl {
+  .float-animation {
+    animation: float-rtl 3s ease-in-out infinite;
+  }
+}
+
+@keyframes float-rtl {
+  0% { transform: translateY(0) scaleX(-1); }
+  50% { transform: translateY(-20px) scaleX(-1); }
+  100% { transform: translateY(0) scaleX(-1); }
+}
+
+@keyframes popUp {
+  0% {
+    transform: translateY(0);
+    background-color: #9ca3af; /* gray-400 */
+    font-size: 50px;
+  }
+  100% {
+    transform: translateY(-24px); /* -translate-y-6 */
+    background-color: #FFD700; /* sunny-yellow */
+    font-size: 80px;
+  }
+}
+
+.animate-home-icon {
+  animation: popUp 0.5s ease-out forwards;
+}
+
+/* Add this to your globals.css */
+@keyframes slideUp {
+  from { transform: translateY(0); opacity: 0; }
+  to { transform: translateY(-24px); opacity: 1; }
 }

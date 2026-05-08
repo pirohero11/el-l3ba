@@ -1,11 +1,12 @@
 import Image from "next/image";
-import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 
-export default function Home() {
-  const t = useTranslations("HomePage");
-  const locale = useLocale();
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("HomePage");
 
   const getButtonStyles = (isActive: boolean) => {
     const baseStyles =
@@ -30,10 +31,10 @@ export default function Home() {
       {/* hero */}
       <div className="relative w-full aspect-square max-w-[300px] float-animation mt-10">
         <div className="absolute inset-0 bg-candy-pink rounded-full blur-2xl opacity-30"></div>
-        <div className="relative w-full h-full bg-white rounded-[40px] border-4 border-white shadow-card overflow-hidden flex items-center justify-center p-6 bg-gradient-to-br from-sky-blue to-bright-purple">
+        <div className="relative w-full h-full bg-white rounded-[40px] border-4 border-white shadow-card overflow-hidden flex items-center justify-center p-6 bg-linear-to-br from-sky-blue to-bright-purple">
           <img
             alt="Colorful 3D abstract shapes representing a fun playground"
-            className="w-full h-full object-cover rounded-3xl mix-blend-overlay opacity-80"
+            className="w-full h-full object-cover rounded-3xl mix-blend-overlay opacity-80 rtl-flip"
             data-alt="Bright, colorful 3D abstract geometric shapes like spheres and cubes floating in a playful, toy-like composition with soft lighting"
             src="/hero-logo.png"
           />
@@ -52,7 +53,7 @@ export default function Home() {
       </div>
       {/* buttons */}
       <div className="flex flex-row justify-center items-center mt-20">
-        <Link href={`/${locale}/getStarted`}>
+        <Link href={`/${locale}/child/getStarted`}>
           <Button className="bg-sunny-yellow w-80 h-17 text-4xl text-bright-purple font-extrabold rounded-60">
             {t("getStarted")}
           </Button>

@@ -7,6 +7,17 @@
   },
   "GetStarted": {
     "title": "Let's start the game 🎮",
-    "description": "Choose who you want to be from the gang"
+    "description": "Choose who you want to be from the gang",
+    "name": "What's the name our upcoming hero?",
+    "username": "Enter your username",
+    "getStarted": "Let's gooo!!!! 🚀",
+    "adultDashboard": "If you are an adult"
+  },
+  "scan": {
+    "title": "Go get your father’s approval first ✋",
+    "scanQR": "Show this QR code to your father🤳",
+    "retry": "Sorry, luck wasn’t on your side ✨",
+    "scanned": "Perfect, champ! 🥳",
+    "notScanned": "Scan me"
   }
 }

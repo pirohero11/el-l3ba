@@ -4,7 +4,7 @@ import { extendTailwindMerge } from "tailwind-merge"
 const customTwMerge = extendTailwindMerge({
   extend: {
     theme: {
-      colors: [
+      color: [
         "primary",
         "background-light",
         "background-dark",

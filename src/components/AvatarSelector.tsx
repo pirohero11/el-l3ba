@@ -86,10 +86,10 @@ export default function AvatarSelector() {
   };
 
   return (
-    <div className="relative w-full h-[250px] flex items-center justify-center overflow-hidden select-none">
+    <div className="relative w-full h-[250px] flex items-center justify-center overflow-hidden select-none mirror-rtl">
       {/* Selection Circle - Centered exactly in the middle of the parent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
-        <div className="size-32 rounded-full border-4 border-bright-purple shadow-[0_0_25px_rgba(114,9,183,0.6)] bg-white/5 backdrop-blur-[2px]" />
+        <div className="size-40 rounded-full border-4 border-bright-purple shadow-[0_0_25px_rgba(114,9,183,0.6)] bg-white/5 backdrop-blur-[2px]" />
       </div>
 
       <div 
@@ -102,6 +102,7 @@ export default function AvatarSelector() {
         onTouchStart={(e) => startDragging(e.touches[0].pageX)}
         onTouchMove={(e) => moveDragging(e.touches[0].pageX)}
         onTouchEnd={stopDragging}
+        dir="ltr"
         className="w-full h-full overflow-x-auto no-scrollbar flex items-center cursor-grab active:cursor-grabbing px-[calc(50%-60px)]"
         style={{ scrollbarWidth: 'none' }}
       >
@@ -115,8 +116,8 @@ export default function AvatarSelector() {
                 style={{ width: ITEM_WIDTH }}
               >
                 <div className={cn(
-                  "transition-all duration-300 ease-in-out",
-                  isActive ? "scale-150 opacity-100 z-20" : "scale-75 opacity-20 grayscale z-0"
+                  "transition-all duration-300 ease-in-out mirror-rtl",
+                  isActive ? "scale-140 opacity-100 z-20 roundeed-full" : "scale-65 opacity-20 grayscale z-0"
                 )}>
                   <img 
                     src={avatar.src} 
