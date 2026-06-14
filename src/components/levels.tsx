@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 
@@ -35,8 +37,10 @@ export default function SagaMap() {
     return d;
   };
 
+  const targetLvl = levels.find((lvl) => lvl.status === "next");
+
   return (
-    <div className="w-full h-full overflow-y-auto no-scrollbar relative bg-transparent flex justify-center items-center mt-25">
+    <div className="w-full h-full overflow-y-auto no-scrollbar relative bg-transparent flex justify-center items-center mt-25 scroll-smooth">
       <div className="relative" style={{ height: MAP_HEIGHT, width: '100%' }}>
         <svg 
           viewBox={`0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`}
@@ -72,9 +76,22 @@ export default function SagaMap() {
             className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group"
           >
             <button
-              className={lvl.status == "done" ? "w-20 h-20 rounded-full flex items-center justify-center text-4xl font-black transition-all duration-300 shadow-[0_6px_0_0_rgba(114,9,183,0.3)] active:shadow-none active:translate-y-1 hover:scale-110 bg-sky-blue text-white border-4 border-white" : lvl.status == "next" ? "w-20 h-20 rounded-full flex items-center justify-center text-4xl transition-all duration-300 font-black shadow-[0_6px_0_0_rgba(114,9,183,0.3)] active:shadow-none active:translate-y-1 hover:scale-110 bg-primary text-bright-purple border-4 border-white" : "w-20 h-20 rounded-full flex items-center justify-center text-4xl font-black transition-all duration-300 shadow-[0_6px_0_0_rgba(114,9,183,0.3)] active:shadow-none active:translate-y-1 hover:scale-110 bg-admin-slate text-white border-4 border-white"}
+              ref={(node) => {
+                if (lvl.status === "next" && node) {
+                  if (!(node as any).hasScrolled) {
+                    (node as any).hasScrolled = true;
+                    setTimeout(() => {
+                      node.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center',
+                      });
+                    }, 100);
+                  }
+                }
+              }}
+              className={lvl.status == "done" ? "w-20 h-20 rounded-full flex items-center justify-center text-4xl font-black transition-all duration-300 shadow-[0_6px_0_0_rgba(114,9,183,0.3)] active:shadow-none active:translate-y-1 hover:scale-110 bg-sky-blue text-white border-4 border-white" : lvl.status == "next" ? "w-22 h-22 rounded-full flex items-center justify-center text-5xl transition-all duration-300 font-black shadow-[0_6px_0_0_rgba(114,9,183,0.3)] active:shadow-none active:translate-y-1 hover:scale-110 bg-primary text-bright-purple border-4 border-white animate-bounce" : "w-20 h-20 rounded-full flex items-center justify-center text-4xl font-black transition-all duration-300 shadow-[0_6px_0_0_rgba(114,9,183,0.3)] active:shadow-none active:translate-y-1 hover:scale-110 bg-admin-slate text-white border-4 border-white"}
             >
-{lvl.status === "done" || lvl.status === "next" ? <p>{lvl.id}</p> : lvl.status === "locked" ? <p>🔒</p> : null}
+            {lvl.status === "done" || lvl.status === "next" ? <span>{lvl.id}</span> : lvl.status === "locked" ? <span>🔒</span> : null}
             </button>
           </div>
         ))}

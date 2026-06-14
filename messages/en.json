@@ -19,5 +19,12 @@
     "retry": "Sorry, luck wasn’t on your side ✨",
     "scanned": "Perfect, champ! 🥳",
     "notScanned": "Scan me"
+  },
+  "homePage": {
+    "week": "week"
+  },
+  "profile":{
+    "super":"Super"
+    
   }
 }

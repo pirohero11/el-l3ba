@@ -59,7 +59,7 @@
 }
 
 :root {
-  --background: #F0F4F8;
+  --background: #f0f4f8e3;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -206,4 +206,15 @@
 @keyframes slideUp {
   from { transform: translateY(0); opacity: 0; }
   to { transform: translateY(-24px); opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
 }
