@@ -14,6 +14,8 @@ export default function Footer() {
   const pathname = usePathname() || "";
   const isProfileActive = pathname.endsWith("/child/profile");
   const isHomeActive = pathname.endsWith("/child/homePage");
+  const isLeaderActive = pathname.endsWith("/child/leaderboard");
+  const isListActive = pathname.endsWith("/child/list");
 
   const items = [
     {
@@ -49,16 +51,20 @@ export default function Footer() {
     },
     {
       id: "events",
-      isActive: false,
+      isActive: isLeaderActive,
       render: () => (
-        <EmojiEventsIcon className="" sx={{ fontSize: "50px", color: "gray" }} />
+        <Link href="/en/child/leaderboard">
+          <EmojiEventsIcon className={isLeaderActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} sx={{ fontSize: isLeaderActive ? "80px" : "50px", color: isLeaderActive ? "#ffffff" : "gray" }} />
+        </Link>
       )
     },
     {
       id: "list",
       isActive: false,
       render: () => (
-        <FormatListBulletedIcon className="" sx={{ fontSize: "50px", color: "gray" }} />
+        <Link href="/en/child/leaderboard">
+          <FormatListBulletedIcon className={isListActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} sx={{ fontSize: isLeaderActive ? "80px" : "50px", color: isLeaderActive ? "#ffffff" : "gray" }} />
+        </Link>
       )
     }
   ];

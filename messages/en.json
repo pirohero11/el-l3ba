@@ -24,7 +24,12 @@
     "week": "week"
   },
   "profile":{
-    "super":"Super"
-    
+    "super":"Super",
+    "totalStars": "Total Stars",
+    "streak": "Day Streak",
+    "completed": "Missions Done"    
+  },
+  "leaderboard":{
+    "title":"leaderboard"
   }
 }

@@ -2,6 +2,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import Footer from "@/components/Footer";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { faFire } from '@fortawesome/free-solid-svg-icons'
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -23,23 +25,37 @@ export default async function HomePage({
             </div>
         </header>
         
-      <div className="bg-white w-90 h-15 flex items-center justify-center px-8 py-3 rounded-full border-4 border-bright-purple shadow-[0_6px_0_0_#7209B7] mb-6">
+      <div className="bg-white w-90 h-20 flex items-center justify-center px-8 py-3 rounded-3xl border-4 border-bright-purple shadow-[0_6px_0_0_#7209B7] mb-6">
           {/*name*/}
           <p className="text-2xl font-bold text-bright-purple">{t("super")} Chris</p>
           
         </div>
         <section>
-          <div className="bg-white w-90 h-20 rounded-full flex items-center gap-5 border-4 border-bright-purple shadow-[0_6px_0_0_#7209B7] p-10">
+          <div className="bg-white w-90 h-25 rounded-4xl flex items-center gap-5 border-4 border-bright-purple shadow-[0_6px_0_0_#7209B7] p-10 mb-6">
             <div className="w-16 h-16 bg-sunny-yellow rounded-full flex items-center justify-center border-4 border-white shadow-[0_4px_0_0_#E0A800]">
               <FontAwesomeIcon icon={faStar} className="w-10 h-10 text-white" />
             </div>
             <div className="flex flex-col">
-              <p className="text-admin-slate text-lg">Total stars</p>
-              <p className="font-bold text-2xl text-bright-purple">250</p>
+              <p className="text-admin-slate text-lg">{t("stars")}</p>
+              <p className="font-bold text-2xl text-bright-purple">765</p>
             </div>
           </div>
-          <div className=""></div>
-          <div className=""></div>
+          <div className="flex justify-between items-center gap-4">
+            <div className="bg-white w-43 h-50 rounded-4xl flex flex-col items-center gap-2 border-4 border-bright-purple shadow-[0_6px_0_0_#7209B7] p-5">
+                <div className="w-16 h-16 bg-candy-pink rounded-full flex items-center justify-center border-4 border-white shadow-[0_4px_0_0_#E0A800] mb-2">
+                  <FontAwesomeIcon icon={faFire} className="w-10 h-10 text-white" />
+                </div>
+                <p className="font-bold text-4xl text-bright-purple">255</p>
+                <p className="text-admin-slate text-lg">{t("streak")}</p>
+            </div>
+            <div className="bg-white w-43 h-50 rounded-4xl flex flex-col items-center gap-2 border-4 border-bright-purple shadow-[0_6px_0_0_#7209B7] p-5">
+                <div className="w-16 h-16 bg-mint-green rounded-full flex items-center justify-center border-4 border-white shadow-[0_4px_0_0_#E0A800] mb-2">
+                  <FontAwesomeIcon icon={faCircleCheck} className="w-8 h-8 text-white" />
+                </div>
+                <p className="font-bold text-4xl text-bright-purple">85</p>
+                <p className="text-admin-slate text-lg">{t("completed")}</p>
+            </div>
+          </div>
         </section>
         <Footer />
     </div>
