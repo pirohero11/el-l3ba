@@ -7,12 +7,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-marhey), sans-serif;
   --font-mono: var(--font-geist-mono);
   --color-primary: #f3ce16;
   --color-background-light: #f8f8f5;
   --color-background-dark: #221f10;
-  --color-sunny-yellow: #FFD60A;
+  --color-sunny-yellow: #f8de55;
   --color-shadow-yellow:rgba(255, 214, 10, 0.726);
   --color-sky-blue: #4CC9F0;
   --color-candy-pink: #F72585;

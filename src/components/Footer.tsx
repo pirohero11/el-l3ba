@@ -7,15 +7,17 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import PersonIcon from '@mui/icons-material/Person';
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useParams } from "next/navigation"; 
 import { motion } from "framer-motion";
 
 export default function Footer() {
   const pathname = usePathname() || "";
+  const { locale } = useParams();
+
   const isProfileActive = pathname.endsWith("/child/profile");
   const isHomeActive = pathname.endsWith("/child/homePage");
   const isLeaderActive = pathname.endsWith("/child/leaderboard");
-  const isListActive = pathname.endsWith("/child/list");
+  const isListActive = pathname.endsWith("/child/history");
 
   const items = [
     {
@@ -29,7 +31,7 @@ export default function Footer() {
       id: "profile",
       isActive: isProfileActive,
       render: () => (
-        <Link href="/en/child/profile">
+        <Link href={`/${locale}/child/profile`}>
           <PersonIcon 
             className={isProfileActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} 
             sx={{ fontSize: isProfileActive ? "80px" : "50px", color: isProfileActive ? "#ffffff" : "gray" }} 
@@ -41,7 +43,7 @@ export default function Footer() {
       id: "home",
       isActive: isHomeActive,
       render: () => (
-        <Link href="/en/child/homePage">
+        <Link href={`/${locale}/child/homePage`}>
           <Home 
             className={isHomeActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} 
             sx={{ fontSize: isHomeActive ? "80px" : "50px", color: isHomeActive ? "#ffffff" : "gray" }} 
@@ -50,35 +52,39 @@ export default function Footer() {
       )
     },
     {
-      id: "events",
+      id: "leaderboard",
       isActive: isLeaderActive,
       render: () => (
-        <Link href="/en/child/leaderboard">
+        <Link href={`/${locale}/child/leaderboard`}>
           <EmojiEventsIcon className={isLeaderActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} sx={{ fontSize: isLeaderActive ? "80px" : "50px", color: isLeaderActive ? "#ffffff" : "gray" }} />
         </Link>
       )
     },
     {
-      id: "list",
-      isActive: false,
+      id: "history",
+      isActive: isListActive,
       render: () => (
-        <Link href="/en/child/leaderboard">
-          <FormatListBulletedIcon className={isListActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} sx={{ fontSize: isLeaderActive ? "80px" : "50px", color: isLeaderActive ? "#ffffff" : "gray" }} />
+        <Link href={`/${locale}/child/history`}>
+          <FormatListBulletedIcon className={isListActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} sx={{ fontSize: isListActive ? "80px" : "50px", color: isListActive ? "#ffffff" : "gray" }} />
         </Link>
       )
     }
   ];
 
-  const activeIndex = items.findIndex(item => item.isActive);
+  // Map to a new array to completely avoid breaking item references 
+  let renderItems = [...items];
+  const activeIndex = renderItems.findIndex(item => item.isActive);
+  
+  // Safely swap elements inside the rendering layout block
   if (activeIndex !== -1 && activeIndex !== 2) {
-    const temp = items[2];
-    items[2] = items[activeIndex];
-    items[activeIndex] = temp;
+    const temp = renderItems[2];
+    renderItems[2] = renderItems[activeIndex];
+    renderItems[activeIndex] = temp;
   }
 
   return (
     <div className="fixed z-9999 border-bright-purple border-10 bg-white rounded-full flex flex-row w-97 h-30 items-center justify-center gap-2 bottom-5">
-      {items.map((item) => (
+      {renderItems.map((item) => (
         <motion.div
           key={item.id}
           layout

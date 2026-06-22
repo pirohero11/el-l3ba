@@ -25,11 +25,19 @@
   },
   "profile":{
     "super":"Super",
-    "totalStars": "Total Stars",
+    "stars": "Total Stars",
     "streak": "Day Streak",
     "completed": "Missions Done"    
   },
   "leaderboard":{
     "title":"leaderboard"
+  },
+  "history": {
+    "title": "Your History",
+    "description": "Play games and win prizes",
+    "Day":"Day",
+    "taskName": "Task Name",
+    "status": "Status",
+    "time": "Time"
   }
 }
