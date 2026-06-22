@@ -26,7 +26,7 @@ export default function HistoryCard({ day, translations, image }: HistoryCardPro
         layout
         onClick={() => setIsExpanded(!isExpanded)}
         transition={{ type: "spring", stiffness: 300, damping: 28 }}
-        className={`w-90 cursor-pointer flex bg-white border-2 border-admin-slate shadow-[1px_8px_1px_0_#000000] p-2 overflow-hidden ${
+        className={`w-100 cursor-pointer flex bg-white border-2 border-admin-slate shadow-[1px_8px_1px_0_#000000] p-2 overflow-hidden ${
           isExpanded
             ? "h-60 flex-col items-center justify-center gap-4 rounded-[70px]"
             : "h-30 flex-row items-center justify-center gap-2 rounded-full"
