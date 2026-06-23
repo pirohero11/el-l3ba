@@ -2,13 +2,14 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 import withPWA from "next-pwa";
+// Import the PWA configuration defined in next-pwa.config.js
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const pwaConfig = require("./next-pwa.config.js");
 
 const withNextIntl = createNextIntlPlugin();
 
-// PWA enhancer with options (read from next-pwa.config.js)
-const withPWAConfig = withPWA({
-  // Options are defined in next-pwa.config.js
-});
+// Apply the PWA enhancer using the imported configuration
+const withPWAConfig = withPWA(pwaConfig);
 
 /** @type {NextConfig} */
 const nextConfig: NextConfig = {
@@ -17,4 +18,5 @@ const nextConfig: NextConfig = {
   turbopack: {},
 };
 
+// @ts-ignore
 export default withPWAConfig(withNextIntl(nextConfig));
