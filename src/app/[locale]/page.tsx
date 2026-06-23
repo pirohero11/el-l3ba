@@ -18,9 +18,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   };
 
   return (
-    <div className="flex flex-col justify-center overflow-hidden items-center max-h-screen">
+    <div className="flex flex-col gap-8 items-center max-h-screen">
       {/* header */}
-      <div className="flex flex-row justify-end h-1/5 w-full gap-4 mt-5">
+      <div className="flex flex-row justify-end h-1/5 w-full gap-4">
         <Link href="/en">
           <button className={getButtonStyles(locale === "en")}>En</button>
         </Link>
@@ -29,7 +29,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </Link>
       </div>
       {/* hero */}
-      <div className="relative w-8/10 aspect-square float-animation mt-10">
+      <div className="relative w-8/10 aspect-square float-animation ">
         <div className="absolute inset-0 bg-candy-pink rounded-full blur-2xl opacity-30"></div>
         <div className="relative w-full h-full bg-white rounded-[40px] border-4 border-white shadow-card overflow-hidden flex items-center justify-center p-6 bg-linear-to-br from-sky-blue to-bright-purple">
           <img
@@ -44,7 +44,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
       </div>
       {/* title and description */}
-      <div className="flex flex-col justify-center items-center mt-10 p-5">
+      <div className="flex flex-col justify-center items-center p-5">
         <p className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-3xl font-bold text-bright-purple text-center">
           {t("title")}
         </p>
@@ -52,7 +52,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <p className="text-xl font-bold text-center">{t("description")}</p>
       </div>
       {/* buttons */}
-      <div className="flex flex-row justify-center items-center mt-20 w-full">
+      <div className="flex flex-row justify-center items-center w-full">
         <Link href={`/${locale}/child/getStarted`}>
           <Button className="bg-sunny-yellow w-full h-17 text-4xl text-bright-purple font-extrabold rounded-60">
             {t("getStarted")}
