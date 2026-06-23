@@ -6,6 +6,7 @@ import {getMessages, setRequestLocale} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import Image from 'next/image';
+import Head from "next/head";
 
 const marhey = Marhey({
   variable: "--font-marhey",
@@ -19,10 +20,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "El l3ba 6",
-  icons:{
-    icon:'/favicon.ico',
+  icons: {
+    icon: '/favicon.ico',
   },
-  description: "Play with the gang"
+  description: "Play with the gang",
+  manifest: '/manifest.json',
 };
 
 export default async function RootLayout({
@@ -47,6 +49,10 @@ export default async function RootLayout({
       dir={locale === 'ar' ? 'rtl' : 'ltr'}
       className={`${marhey.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <Head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#000000" />
+      </Head>
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider messages={messages}>
           {children}

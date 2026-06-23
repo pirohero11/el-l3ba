@@ -1,22 +1,39 @@
 // next.config.ts
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
-import withPWA from "next-pwa";
-// Import the PWA configuration defined in next-pwa.config.js
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const pwaConfig = require("./next-pwa.config.js");
 
+// Initialize next-intl plugin (auto-detect locales from messages folder)
 const withNextIntl = createNextIntlPlugin();
 
-// Apply the PWA enhancer using the imported configuration
-const withPWAConfig = withPWA(pwaConfig);
+// Initialize next-pwa plugin with options (mirroring next-pwa.config.js)
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const withPWA = require("next-pwa")({
+  dest: "public",
+  register: true,
+  skipWaiting: true,
+  // Disable PWA in development for faster reloads
+  disable: process.env.NODE_ENV === "development",
+  // Manifest configuration (optional, can also be a separate file)
+  manifest: {
+    name: "My App",
+    short_name: "App",
+    description: "My progressive web app",
+    start_url: "/",
+    display: "standalone",
+    background_color: "#ffffff",
+    theme_color: "#000000",
+    icons: [
+      { src: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
+      { src: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+  },
+});
 
 /** @type {NextConfig} */
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["172.24.144.1"],
-  // Provide an empty turbopack config to avoid Turbopack warnings
-  turbopack: {},
 };
 
+// Combine plugins – ignore TypeScript conflicts between them
 // @ts-ignore
-export default withPWAConfig(withNextIntl(nextConfig));
+export default withPWA(withNextIntl(nextConfig));
