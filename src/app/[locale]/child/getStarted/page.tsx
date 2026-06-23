@@ -11,7 +11,7 @@ export default async function GetStarted({ params }: { params: Promise<{ locale:
   const t = await getTranslations('GetStarted');
 
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center gap-20 pt-12">
+    <div className="max-h-screen bg-background flex flex-col items-center gap-20 pt-12">
         <header className="px-4 text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full border-4 border-dark shadow-card rtl-flip">
                 <Face sx={{color:"#7209B7", fontSize:"40px"}} />
