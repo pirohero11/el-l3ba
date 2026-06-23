@@ -5,6 +5,7 @@ import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, setRequestLocale} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
+import Image from 'next/image';
 
 const marhey = Marhey({
   variable: "--font-marhey",
@@ -18,7 +19,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "El l3ba 6",
-  description: "Play with the gang",
+  icons:{
+    icon:'/favicon.ico',
+  },
+  description: "Play with the gang"
 };
 
 export default async function RootLayout({
@@ -51,3 +55,4 @@ export default async function RootLayout({
     </html>
   );
 }
+

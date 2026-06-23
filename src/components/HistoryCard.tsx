@@ -36,7 +36,7 @@ export default function HistoryCard({ day, translations, image }: HistoryCardPro
         <motion.div
           layout
           transition={{ type: "spring", stiffness: 300, damping: 28 }}
-          className={`border-4 border-sunny-yellow rounded-full shrink-0 ${
+          className={`border-4 border-sunny-yellow rounded-full shrink-0 bg-[url(/${image})] bg-cover bg-center ${
             isExpanded
               ? "w-80 h-[84px] order-2"
               : "w-[84px] h-[84px] order-1"
