@@ -9,8 +9,8 @@ export default async function ScanPage({ params }: { params: Promise<{ locale: s
     const t = await getTranslations("scan");
     return (
         <div className="flex flex-col gap-5 w-full">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full border-4 border-dark shadow-card p-5 m-5">
-                <ArrowBackIcon sx={{color:"#7209B7", fontSize:"40px"}} />
+            <div className="inline-flex items-center justify-center w-15 h-15 bg-white rounded-full border-4 border-dark shadow-card p-5 m-5">
+                <ArrowBackIcon sx={{color:"#7209B7", fontSize:"30px"}} />
             </div>
             <div className="px-4 text-center flex-col flex gap-3 items-center">
                 {/*title*/}
@@ -20,7 +20,7 @@ export default async function ScanPage({ params }: { params: Promise<{ locale: s
             </div>
             {/* QR CODE Scanner */}
             <div className="flex flex-col items-center justify-center">
-                <div className="bg-white w-100 h-130 rounded-[25px]">
+                <div className="bg-white w-9/10 aspect-square rounded-[25px]">
 
                 </div>
             </div>

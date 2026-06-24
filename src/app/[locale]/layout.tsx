@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "El l3ba 6",
   icons: {
-    icon: '/favicon.ico',
+    icon: '/icon-192x192.png',
   },
   description: "Play with the gang",
   manifest: '/manifest.json',

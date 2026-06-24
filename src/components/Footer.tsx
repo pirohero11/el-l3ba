@@ -83,7 +83,7 @@ export default function Footer() {
   }
 
   return (
-    <div className="fixed z-9999 border-bright-purple border-10 bg-white rounded-full flex flex-row w-97 h-30 items-center justify-center gap-2 bottom-5">
+    <div className="fixed z-9999 border-bright-purple border-10 bg-white rounded-full flex flex-row w-9/10 h-25 items-center justify-center gap-2 bottom-10">
       {renderItems.map((item) => (
         <motion.div
           key={item.id}

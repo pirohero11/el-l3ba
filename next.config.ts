@@ -15,9 +15,9 @@ const withPWA = require("next-pwa")({
   disable: process.env.NODE_ENV === "development",
   // Manifest configuration (optional, can also be a separate file)
   manifest: {
-    name: "My App",
-    short_name: "App",
-    description: "My progressive web app",
+    name: "El l3ba 6",
+    short_name: "El l3ba 6",
+    description: "Play with the gang",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
