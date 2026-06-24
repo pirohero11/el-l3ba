@@ -97,13 +97,13 @@ export default async function HomePage({
       </div>
       
       <div className="flex flex-col gap-6">
-        <LeaderboardName params={params} id={4} />
-        <LeaderboardName params={params} id={4} />
-        <LeaderboardName params={params} id={4} />
-        <LeaderboardName params={params} id={4} />
-        <LeaderboardName params={params} id={4} />
-        <LeaderboardName params={params} id={4} />
-        <LeaderboardName params={params} id={4} />
+        <LeaderboardName params={params}/>
+        <LeaderboardName params={params}/>
+        <LeaderboardName params={params}/>
+        <LeaderboardName params={params}/>
+        <LeaderboardName params={params}/>
+        <LeaderboardName params={params}/>
+        <LeaderboardName params={params}/>
       </div>
 
       <Footer />
