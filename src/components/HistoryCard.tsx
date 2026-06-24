@@ -19,14 +19,14 @@ export default function HistoryCard({ day, translations, image }: HistoryCardPro
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="w-90 h-auto gap-2 flex flex-col select-none">
+    <div className="w-9/10 h-auto gap-2 flex flex-col select-none">
       <p className="text-xl font-extrabold">{translations.day} {day}</p>
       
       <motion.div
         layout
         onClick={() => setIsExpanded(!isExpanded)}
         transition={{ type: "spring", stiffness: 300, damping: 28 }}
-        className={`w-100 cursor-pointer flex bg-white border-2 border-admin-slate shadow-[1px_8px_1px_0_#000000] p-2 overflow-hidden ${
+        className={`w-9/10cursor-pointer flex bg-white border-2 border-admin-slate shadow-[1px_8px_1px_0_#000000] p-2 overflow-hidden ${
           isExpanded
             ? "h-60 flex-col items-center justify-center gap-4 rounded-[70px]"
             : "h-30 flex-row items-center justify-center gap-2 rounded-full"
@@ -38,7 +38,7 @@ export default function HistoryCard({ day, translations, image }: HistoryCardPro
           transition={{ type: "spring", stiffness: 300, damping: 28 }}
           className={`border-4 border-sunny-yellow rounded-full shrink-0 bg-[url(/${image})] bg-cover bg-center ${
             isExpanded
-              ? "w-80 h-[84px] order-2"
+              ? "w-9/10 h-[84px] order-2"
               : "w-[84px] h-[84px] order-1"
           }`}
         />

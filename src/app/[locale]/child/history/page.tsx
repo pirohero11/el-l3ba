@@ -12,11 +12,11 @@ export default async function Events({
   setRequestLocale(locale);
   const t = await getTranslations("history");
     return (
-        <div className="h-screen w-screen bg-background flex flex-col items-center pb-36">
+        <div className="max-h-screen w-screen bg-background flex flex-col items-center pb-36">
           <div className="h-20 w-screen flex items-center justify-center mb-6 mt-6">
             <p className="font-black text-3xl text-bright-purple">{t("title")}</p>
           </div>
-          <div className="flex flex-col gap-6 pb-40">
+          <div className="flex flex-col gap-6 pb-40 w-screen items-center">
             <HistoryCard
               day={7}
               translations={{

@@ -25,7 +25,10 @@ export default function Footer() {
       id: "fire",
       isActive: isStreakActive,
       render: () => (
-        <LocalFireDepartmentIcon className="" sx={{ fontSize: isStreakActive ? "60px" : "40px", color: isStreakActive ? "#ffffff" : "gray" }} />
+        <Link href={`/${locale}/child/streak`}>
+          <LocalFireDepartmentIcon className={isStreakActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} 
+            sx={{ fontSize: isStreakActive ? "60px" : "40px", color: isStreakActive ? "#ffffff" : "gray" }} />
+        </Link>
       )
     },
     {

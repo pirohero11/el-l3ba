@@ -19,6 +19,7 @@
     "@material/web": "^2.4.1",
     "@mui/icons-material": "^9.0.0",
     "@mui/material": "^9.0.0",
+    "@tailwindcss/vite": "^4.3.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "fontawesome": "^5.6.3",
@@ -43,7 +44,12 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.2",
-    "tailwindcss": "^4",
+    "tailwindcss": "^4.3.1",
     "typescript": "^5"
+  },
+  "allowScripts": {
+    "tailwindcss@4.2.2": true,
+    "tailwindcss@4.3.1": true,
+    "@tailwindcss/vite@4.3.1": true
   }
 }
