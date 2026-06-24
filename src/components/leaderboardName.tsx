@@ -6,7 +6,7 @@ export default async function LeaderboardName({
       params,
     }: {
       params: Promise<{ locale: string }>;
-    }, id: number) {
+    }) {
       const { locale } = await params;
       setRequestLocale(locale);
       const t = await getTranslations("leaderboard");
