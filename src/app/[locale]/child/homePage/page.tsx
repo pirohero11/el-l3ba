@@ -17,8 +17,8 @@ export default async function HomePage({
     <div className="min-h-screen w-full bg-background flex flex-col items-center justify-center p-4">
         {/*header */}
         <div className=" w-full max-w-md shadow-2xl rounded-3xl overflow-hidden border-4 border-white flex justify-center">
-            <div className="fixed z-9999 h-16 w-97 flex flex-row justify-between items-center">
-                <Button className="w-3/10 h-14 rounded-full bg-white border-bright-purple border-4"><span className="font-black text-xl text-bright-purple decoration-0">⭐</span></Button>
+            <div className="fixed z-9999 h-16 w-9/10 flex flex-row justify-center items-center gap-5">
+                <Button className="w-6/20 h-14 rounded-full bg-white border-bright-purple border-4"><span className="font-black text-xl text-bright-purple decoration-0">⭐</span></Button>
                 <div className="bg-white border-sunny-yellow border-4 text-bright-purple rounded-full p-2 shadow-button w-3/10 h-14 flex justify-center items-center"><span className="font-black text-2xl text-bright-purple">{t("week")} 1</span></div>
                 <Button className="w-16 h-16 rounded-full bg-white border-bright-purple border-4"><img src="/avtr1.png" alt="" /></Button>
             </div>

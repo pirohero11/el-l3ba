@@ -18,13 +18,14 @@ export default function Footer() {
   const isHomeActive = pathname.endsWith("/child/homePage");
   const isLeaderActive = pathname.endsWith("/child/leaderboard");
   const isListActive = pathname.endsWith("/child/history");
+  const isStreakActive = pathname.endsWith("/child/streak")
 
   const items = [
     {
       id: "fire",
-      isActive: false,
+      isActive: isStreakActive,
       render: () => (
-        <LocalFireDepartmentIcon className="" sx={{ fontSize: "50px", color: "gray" }} />
+        <LocalFireDepartmentIcon className="" sx={{ fontSize: isStreakActive ? "60px" : "40px", color: isStreakActive ? "#ffffff" : "gray" }} />
       )
     },
     {
@@ -34,7 +35,7 @@ export default function Footer() {
         <Link href={`/${locale}/child/profile`}>
           <PersonIcon 
             className={isProfileActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} 
-            sx={{ fontSize: isProfileActive ? "80px" : "50px", color: isProfileActive ? "#ffffff" : "gray" }} 
+            sx={{ fontSize: isProfileActive ? "60px" : "40px", color: isProfileActive ? "#ffffff" : "gray" }} 
           />
         </Link>
       )
@@ -46,7 +47,7 @@ export default function Footer() {
         <Link href={`/${locale}/child/homePage`}>
           <Home 
             className={isHomeActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} 
-            sx={{ fontSize: isHomeActive ? "80px" : "50px", color: isHomeActive ? "#ffffff" : "gray" }} 
+            sx={{ fontSize: isHomeActive ? "60px" : "40px", color: isHomeActive ? "#ffffff" : "gray" }} 
           />
         </Link>
       )
@@ -56,7 +57,7 @@ export default function Footer() {
       isActive: isLeaderActive,
       render: () => (
         <Link href={`/${locale}/child/leaderboard`}>
-          <EmojiEventsIcon className={isLeaderActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} sx={{ fontSize: isLeaderActive ? "80px" : "50px", color: isLeaderActive ? "#ffffff" : "gray" }} />
+          <EmojiEventsIcon className={isLeaderActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} sx={{ fontSize: isLeaderActive ? "60px" : "40px", color: isLeaderActive ? "#ffffff" : "gray" }} />
         </Link>
       )
     },
@@ -65,7 +66,7 @@ export default function Footer() {
       isActive: isListActive,
       render: () => (
         <Link href={`/${locale}/child/history`}>
-          <FormatListBulletedIcon className={isListActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} sx={{ fontSize: isListActive ? "80px" : "50px", color: isListActive ? "#ffffff" : "gray" }} />
+          <FormatListBulletedIcon className={isListActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} sx={{ fontSize: isListActive ? "60px" : "40px", color: isListActive ? "#ffffff" : "gray" }} />
         </Link>
       )
     }
@@ -83,7 +84,7 @@ export default function Footer() {
   }
 
   return (
-    <div className="fixed z-9999 border-bright-purple border-10 bg-white rounded-full flex flex-row w-9/10 h-25 items-center justify-center gap-2 bottom-10">
+    <div className="fixed z-9999 border-bright-purple border-10 bg-white rounded-full flex flex-row w-8/10 h-25 items-center justify-center gap-2 bottom-10">
       {renderItems.map((item) => (
         <motion.div
           key={item.id}
