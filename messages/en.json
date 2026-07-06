@@ -44,6 +44,13 @@
     "title": "Your Success Trail 🏆",
     "day": "Days in a row",
     "motivation": "What a champ 🔥",
-    "week": "Week's journey"
+    "week": "Week's journey",
+    "Sat": "Sat",
+    "Sun": "Sun",
+    "Mon": "Mon",
+    "Tue": "Tue",
+    "Wed": "Wed",
+    "Thu": "Thu",
+    "Fri": "Fri"
   }
 }
