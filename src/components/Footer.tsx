@@ -7,7 +7,7 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import PersonIcon from '@mui/icons-material/Person';
 import Link from "next/link";
-import { usePathname, useParams } from "next/navigation"; 
+import { usePathname, useParams } from "next/navigation";
 import { motion } from "framer-motion";
 
 export default function Footer() {
@@ -26,7 +26,7 @@ export default function Footer() {
       isActive: isStreakActive,
       render: () => (
         <Link href={`/${locale}/child/streak`}>
-          <LocalFireDepartmentIcon className={isStreakActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} 
+          <LocalFireDepartmentIcon className={isStreakActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"}
             sx={{ fontSize: isStreakActive ? "60px" : "40px", color: isStreakActive ? "#ffffff" : "gray" }} />
         </Link>
       )
@@ -36,9 +36,9 @@ export default function Footer() {
       isActive: isProfileActive,
       render: () => (
         <Link href={`/${locale}/child/profile`}>
-          <PersonIcon 
-            className={isProfileActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} 
-            sx={{ fontSize: isProfileActive ? "60px" : "40px", color: isProfileActive ? "#ffffff" : "gray" }} 
+          <PersonIcon
+            className={isProfileActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"}
+            sx={{ fontSize: isProfileActive ? "60px" : "40px", color: isProfileActive ? "#ffffff" : "gray" }}
           />
         </Link>
       )
@@ -48,9 +48,9 @@ export default function Footer() {
       isActive: isHomeActive,
       render: () => (
         <Link href={`/${locale}/child/homePage`}>
-          <Home 
-            className={isHomeActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"} 
-            sx={{ fontSize: isHomeActive ? "60px" : "40px", color: isHomeActive ? "#ffffff" : "gray" }} 
+          <Home
+            className={isHomeActive ? "bg-sunny-yellow rounded-full -translate-y-6 border-white border-4 shadow-sunny-yellow shadow-lg p-2 transition-all duration-500 ease-in-out" : "transition-all duration-500 ease-in-out"}
+            sx={{ fontSize: isHomeActive ? "60px" : "40px", color: isHomeActive ? "#ffffff" : "gray" }}
           />
         </Link>
       )
@@ -78,7 +78,7 @@ export default function Footer() {
   // Map to a new array to completely avoid breaking item references 
   let renderItems = [...items];
   const activeIndex = renderItems.findIndex(item => item.isActive);
-  
+
   // Safely swap elements inside the rendering layout block
   if (activeIndex !== -1 && activeIndex !== 2) {
     const temp = renderItems[2];

@@ -52,5 +52,12 @@
     "Wed": "Wed",
     "Thu": "Thu",
     "Fri": "Fri"
+  },
+  "mission": {
+    "title": "Your Mission",
+    "sub": "Let's see what today's mission has for us",
+    "description": "Play, collect stars, and win weekly prizes! 🚀",
+    "uploadVideo": "Upload your video & wait for the \"OK\"",
+    "upload": "Fly it over"
   }
 }
