@@ -20,7 +20,9 @@ export default async function HomePage({
         <div className="fixed z-9999 h-16 w-9/10 flex flex-row justify-center items-center gap-5">
           <Button className="w-6/20 h-12 rounded-full bg-white border-bright-purple border-4"><span className="font-black text-xl text-bright-purple decoration-0">⭐</span></Button>
           <div className="bg-white border-sunny-yellow border-4 text-bright-purple rounded-full p-2 shadow-button w-4/10 h-12 flex justify-center items-center"><span className="font-black text-xl text-bright-purple">{t("week")} 1</span></div>
-          <Button className="w-14 h-14 rounded-full bg-white border-bright-purple border-4"><img src="/avtr1.png" alt="" /></Button>
+          <Link href={`/${locale}/child/profile`}>          
+            <Button className="w-14 h-14 rounded-full bg-white border-bright-purple border-4"><img src="/avtr1.png" alt="" /></Button>
+          </Link>
         </div>
         <Levels />
         <Footer />

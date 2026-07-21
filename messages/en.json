@@ -14,7 +14,7 @@
     "adultDashboard": "If you are an adult"
   },
   "scan": {
-    "title": "Go get your father’s approval first ✋",
+    "title": "Go get your parent's approval first ✋",
     "scanQR": "Show this QR code to your father🤳",
     "retry": "Sorry, luck wasn’t on your side ✨",
     "scanned": "Perfect, champ! 🥳",
@@ -35,7 +35,8 @@
   "history": {
     "title": "Your History",
     "description": "Play games and win prizes",
-    "Day":"Day",
+    "week": "Week",
+    "day": "Day",
     "taskName": "Task Name",
     "status": "Status",
     "time": "Time"
