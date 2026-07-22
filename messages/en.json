@@ -60,5 +60,18 @@
     "description": "Play, collect stars, and win weekly prizes! 🚀",
     "uploadVideo": "Upload your video & wait for the \"OK\"",
     "upload": "Fly it over"
+  },
+  "Pwelcome": {
+    "title": "Hellooz",
+    "description": "Because we value your child's privacy and your statisfaction, here is a video explaning the whole game idea just to make you comfortable with our app and the idea.",
+    "add" : "Add your child"
+  },
+  "Pscan": {
+    "title": "Scan the QR code on your child's device",
+    "button": "Confirm"
+  },
+  "Pconfirm": {
+    "title": "You're all set",
+    "button": "Done"
   }
 }
