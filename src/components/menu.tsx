@@ -1,13 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import Link from "next/link";
 
-// Sidebar slide-in from the right side
-const sidebarVariants = {
-  closed: { x: "-100%", transition: { type: "tween", duration: 0.3 } },
-  open: { x: 0, transition: { type: "tween", duration: 0.3 } },
+const sidebarVariants: Variants = {
+  closed: { 
+    x: '-100%', 
+    transition: { type: 'tween', duration: 0.3 } 
+  },
+  open: { 
+    x: 0, 
+    transition: { type: 'tween', duration: 0.3 } 
+  },
 };
 
 export default function SideNavbar() {
