@@ -20,15 +20,15 @@ export default async function Events({
       {/* Title */}
 
       {/* Week Accordions */}
-      <HistoryContent
+        <HistoryContent
         translations={{
-          week: t("week"),
-          day: t("day"),
-          taskName: t("taskName"),
-          time: t("time"),
-          status: t("status"),
+            week: t("week"),
+            day: t("day"),
+            taskName: t("taskName"),
+            time: t("time"),
+            status: t("status"),
         }}
-      />
+        />
     </div>
-  );
+    );
 }
