@@ -68,7 +68,19 @@
   },
   "Pscan": {
     "title": "Scan the QR code on your child's device",
-    "button": "Confirm"
+    "button": "Confirm",
+    "heading": "Chris has something for you to see",
+    "taskName": "Clean the room",
+    "submittedTime": "Submitted today at 4 PM",
+    "accept": "Accept",
+    "redo": "Redo"
+  },
+  "Ptoggle": {
+    "pending": "Pending",
+    "history": "History"
+  },
+  "Pmenu": {
+    "addChild": "+ Add Child"
   },
   "Pconfirm": {
     "title": "You're all set",

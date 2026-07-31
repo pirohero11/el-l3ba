@@ -3,15 +3,17 @@
 import Link from 'next/link';
 import { usePathname, useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 export default function TabToggle() {
   const pathname = usePathname();
   const params = useParams();
   const locale = params?.locale || 'en'; // Fallback locale if needed
+  const t = useTranslations('Ptoggle');
 
   const tabs = [
-    { name: 'Pending', href: `/${locale}/parent/homePage` },
-    { name: 'History', href: `/${locale}/parent/homePage/history` },
+    { name: t('pending'), href: `/${locale}/parent/homePage` },
+    { name: t('history'), href: `/${locale}/parent/homePage/history` },
   ];
 
   return (

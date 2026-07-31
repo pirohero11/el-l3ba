@@ -40,7 +40,7 @@ export default function WeekSection({
         className="
           w-full flex items-center justify-between
           px-6 py-4 cursor-pointer select-none
-          hover:bg-gray-50/50 transition-colors z-10
+          hover:bg-gray-50/50 transition-colors 
         "
       >
         <span className="font-extrabold text-lg tracking-tight text-[#1a1a2e]">

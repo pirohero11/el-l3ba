@@ -68,7 +68,19 @@
   },
   "Pscan":{
     "title": "امسح الكود ويلا خلينا نبدأ",
-    "button": "تأكيد"
+    "button": "تأكيد",
+    "heading": "كريس عنده حاجة يوريهالك",
+    "taskName": "نضف الأوضة",
+    "submittedTime": "اتبعت النهارده الساعة 4",
+    "accept": "قبول",
+    "redo": "اعادة"
+  },
+  "Ptoggle": {
+    "pending": "قيد الانتظار",
+    "history": "السجل"
+  },
+  "Pmenu": {
+    "addChild": "+ ضيف طفل"
   },
   "Pconfirm":{
     "title": "كده فللل",

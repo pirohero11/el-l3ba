@@ -40,7 +40,7 @@ export default function DayCard({
         className="
           w-full flex items-center justify-between
           px-4 py-2 cursor-pointer select-none
-          bg-transparent border-none z-1
+          bg-transparent border-none 
         "
       >
         <span className="font-extrabold text-base text-[#1a1a2e]">
