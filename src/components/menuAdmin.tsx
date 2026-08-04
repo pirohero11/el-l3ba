@@ -53,15 +53,14 @@ export default function SideNavbar() {
             variants={sidebarVariants}
             className="fixed top-0 h-full w-60 bg-white shadow-2xl z-40 p-8 pt-20 flex flex-col gap-6"
           >
-            <div className="flex items-center w-full border-3 border-bright-purple/50 px-2 h-19 gap-3 rounded-2xl">
-              <div className="w-15 h-15 bg-white rounded-full flex items-center justify-center">
-                <img className="border-3 border-bright-purple rounded-full" src="/avtr1.png" alt="" />
-              </div>
-              <p className="text-xl font-bold text-bright-purple">chris</p>
-            </div>
-            <Link href={`addChild`} >            
-              <button className="flex items-center w-full border-3 border-admin-slate justify-center px-2 h-15 gap-3 rounded-2xl">
-                <p className="font-black text-xl text-admin-slate">{t('addChild')}</p>
+            <Link href={`database`} >            
+              <button className="flex items-center w-full border-3 border-bright-purple justify-center px-2 h-15 gap-3 rounded-2xl">
+                <p className="text-black">Database</p>
+              </button>
+            </Link>
+            <Link href={`misionAssign`} >            
+              <button className="flex items-center w-full border-3 border-bright-purple justify-center px-2 h-15 gap-3 rounded-2xl">
+                <p className="text-black">Mission assignment</p>
               </button>
             </Link>
           </motion.div>

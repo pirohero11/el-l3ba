@@ -1,7 +1,4 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import MenuIcon from '@mui/icons-material/Menu';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import Navbar from '@/components/menu';
 import TabToggle from '@/components/animatedToggle';
