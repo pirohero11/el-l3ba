@@ -17,7 +17,7 @@ export default function SideNavbar() {
       transition: { type: 'tween', duration: 0.3 } 
     },
     open: { 
-      x: 0, 
+      x: "-2rem", 
       transition: { type: 'tween', duration: 0.3 } 
     },
   };
