@@ -13,9 +13,10 @@ interface HistoryCardProps {
     status: string;
   };
   image: string;
+  sticker?: string;
 }
 
-export default function HistoryCard({ day, translations, image }: HistoryCardProps) {
+export default function HistoryCard({ day, translations, image, sticker }: HistoryCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -32,16 +33,22 @@ export default function HistoryCard({ day, translations, image }: HistoryCardPro
             : "h-30 flex-row items-center justify-center gap-2 rounded-full"
         }`}
       >
-        {/* Yellow Shape (Circle/Pill) */}
+        {/* Sticker / Task Image display */}
         <motion.div
           layout
           transition={{ type: "spring", stiffness: 300, damping: 28 }}
-          className={`border-4 border-sunny-yellow rounded-full shrink-0 bg-[url(/${image})] bg-cover bg-center ${
+          className={`border-4 border-sunny-yellow rounded-full shrink-0 bg-cover bg-center flex items-center justify-center overflow-hidden bg-white ${
+            image ? `bg-[url(/${image})]` : ""
+          } ${
             isExpanded
               ? "w-9/10 h-[84px] order-2"
               : "w-[84px] h-[84px] order-1"
           }`}
-        />
+        >
+          {sticker ? (
+            <img src={sticker} alt="Awarded Sticker" className="w-full h-full object-contain p-1" />
+          ) : null}
+        </motion.div>
         
         {/* Content Wrapper (Text and Arrow Button) */}
         <motion.div

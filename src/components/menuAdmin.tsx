@@ -27,17 +27,17 @@ export default function SideNavbar() {
       {/* Menu Icon Button */}
       <button 
         onClick={() => setIsOpen(!isOpen)} 
-        className="fixed top-4 z-999999999999 p-2"
+        className="fixed top-4 z-99999999999999 p-2"
         aria-label="Toggle Menu"
       >
         {isOpen ? (
           // "X" Close Icon
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         ) : (
           // Hamburger Menu Icon
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         )}
@@ -53,12 +53,12 @@ export default function SideNavbar() {
             variants={sidebarVariants}
             className="fixed top-0 h-full w-60 bg-white shadow-2xl z-40 p-8 pt-20 flex flex-col gap-6"
           >
-            <Link href={`database`} >            
+            <Link href={`/${locale}/admins@2026/database`} >            
               <button className="flex items-center w-full border-3 border-bright-purple justify-center px-2 h-15 gap-3 rounded-2xl">
                 <p className="text-black">Database</p>
               </button>
             </Link>
-            <Link href={`misionAssign`} >            
+            <Link href={`/${locale}/admins@2026/missionAssign`} >            
               <button className="flex items-center w-full border-3 border-bright-purple justify-center px-2 h-15 gap-3 rounded-2xl">
                 <p className="text-black">Mission assignment</p>
               </button>

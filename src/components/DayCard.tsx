@@ -10,6 +10,7 @@ export interface Task {
   time: string;
   status: string;
   image?: string;
+  sticker?: string;
 }
 
 interface DayCardProps {
@@ -87,6 +88,7 @@ export default function DayCard({
                       status: `${translations.status}: ${task.status}`,
                     }}
                     image={task.image || ""}
+                    sticker={task.sticker}
                   />
                 ))
               ) : (

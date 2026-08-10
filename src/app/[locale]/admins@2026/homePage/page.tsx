@@ -41,7 +41,7 @@ export default async function AdminPage({ params }: { params: Promise<{ locale: 
                         <div>
                             <p className='text-xl'>Recent activities</p>
                         </div>
-                        <div className='flex flex-col w-full max-h-40 bg-admin-slate/10 rounded-lg z-999999 py-3 gap-5 overflow-y-auto overflow-x-hidden border-2 border-black'>
+                        <div className='flex flex-col w-full max-h-40 bg-admin-slate/10 rounded-lg py-3 gap-5 overflow-y-auto overflow-x-hidden border-2 border-black'>
                             <LeaderboardName name={"Pierre"} rank={50} image={"avtr2"}/>
                             <LeaderboardName name={"Mariea"} rank={90} image={"avtr5f"}/>
                             <LeaderboardName name={"Andrew"} rank={30} image={"avtr3"}/>
