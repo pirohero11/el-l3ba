@@ -53,7 +53,7 @@ export default function ParentMissionCard({
         <p className='text-center font-black text-[15px] text-black/40'>{submittedTime}</p>
       </div>
 
-      <div className='border-5 border-sunny-yellow w-[95%] aspect-video rounded-3xl flex justify-center items-center relative overflow-hidden'>
+      <div className='border-5 border-sunny-yellow w-[95%] aspect-video rounded-3xl flex justify-center items-center'>
         <PlayArrowIcon className="text-white bg-sunny-yellow rounded-full p-2 border-4 border-white shadow-sm" sx={{ fontSize: 70 }} />
       </div>
 
@@ -70,14 +70,14 @@ export default function ParentMissionCard({
           )}
         </div>
       ) : (
-        <div className='w-[95%] h-16 gap-7 border-black flex flex-row items-center'>
+        <div className='w-[95%] h-16 gap-5 border-black flex flex-row items-center'>
           <button
             onClick={handleAcceptClick}
-            className='w-[45%] h-full bg-mint-green flex items-center justify-center rounded-2xl border-black border-2 cursor-pointer hover:opacity-90 transition-opacity'
+            className='w-[47%] h-full bg-mint-green flex items-center justify-center rounded-2xl border-black border-2 cursor-pointer hover:opacity-90 transition-opacity'
           >
             <p className='text-white font-black text-xl'>{acceptLabel}</p>
           </button>
-          <button className='w-[45%] h-full bg-red-500 flex items-center justify-center rounded-2xl border-black border-2 cursor-pointer hover:opacity-90 transition-opacity'>
+          <button className='w-[47%] h-full bg-red-500 flex items-center justify-center rounded-2xl border-black border-2 cursor-pointer hover:opacity-90 transition-opacity'>
             <p className='text-white font-black text-xl'>{redoLabel}</p>
           </button>
         </div>

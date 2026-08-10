@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Link from "next/link";
 import { useTranslations, useLocale } from 'next-intl';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function SideNavbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,6 +64,9 @@ export default function SideNavbar() {
                 <p className="text-black">Mission assignment</p>
               </button>
             </Link>
+            <div className="mt-auto flex justify-center w-full">
+              <LanguageSwitcher variant="compact" />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

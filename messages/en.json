@@ -1,51 +1,51 @@
 {
   "HomePage": {
-    "logo": "El L3ba 6",
-    "title": "Let's play with the gang",
-    "description": "Fun missions, daily challenges, and endless entertainment",
-    "getStarted": "Let's go!!!! 🚀"
+    "logo": "El L3ba 6 👑",
+    "title": "Roll with the Gang",
+    "description": "Wild missions, daily showdowns, and non-stop street energy! 🚀",
+    "getStarted": "Let's Ride! 🚀"
   },
   "GetStarted": {
-    "title": "Let's start the game 🎮",
-    "description": "Who are you?!",
-    "name": "What's the name our upcoming hero?",
-    "username": "Enter your username",
-    "getStarted": "Let's gooo!!!! 🚀",
-    "adultDashboard": "If you are an adult"
+    "title": "Step Into The Ring",
+    "description": "Who's pulling up?! 🚨",
+    "name": "What's your name, boss?",
+    "username": "Tag your handle here",
+    "getStarted": "Let's Start!",
+    "adultDashboard": "For the big bosses & OGs 💼"
   },
   "scan": {
-    "title": "Go get your parent's approval first ✋",
-    "scanQR": "Show this QR code to your father🤳",
-    "retry": "Sorry, luck wasn’t on your side ✨",
-    "scanned": "Perfect, champ! 🥳",
-    "notScanned": "Scan me"
+    "title": "Get Parent's stamp of approval first ✋",
+    "scanQR": "Flash this code to your chief 🤳",
+    "retry": "Bad roll! Try again champ ✨",
+    "scanned": "Gang Member! 🥳",
+    "notScanned": "Scan & Step In"
   },
   "homePage": {
-    "week": "week"
+    "week": "Stage"
   },
-  "profile":{
-    "super":"Super",
-    "stars": "Total Stars",
-    "streak": "Day Streak",
-    "completed": "Missions Done"    
+  "profile": {
+    "super": "Top Boss 👑",
+    "stars": "Bounty Stars ⭐",
+    "streak": "Hot Streak",
+    "completed": "Missions Smashed "
   },
-  "leaderboard":{
-    "title":"leaderboard"
+  "leaderboard": {
+    "title": "Gang Leaderboard 🏆"
   },
   "history": {
-    "title": "Your History",
-    "description": "Play games and win prizes",
-    "week": "Week",
-    "day": "Day",
-    "taskName": "Task Name",
-    "status": "Status",
-    "time": "Time"
+    "title": "Mission Vault 🗄️",
+    "description": "Crush challenges & claim your trophy stickers!",
+    "week": "Phase",
+    "day": "Round",
+    "taskName": "Challenge",
+    "status": "Verdict",
+    "time": "Timestamp"
   },
   "streak": {
-    "title": "Your Success Trail 🏆",
-    "day": "Days in a row",
-    "motivation": "What a champ 🔥",
-    "week": "Week's journey",
+    "title": "The Legend's Trail 🏆",
+    "day": "Days on top",
+    "motivation": "Unstoppable force! 🔥",
+    "week": "Weekly Conquest",
     "Sat": "Sat",
     "Sun": "Sun",
     "Mon": "Mon",
@@ -55,35 +55,70 @@
     "Fri": "Fri"
   },
   "mission": {
-    "title": "Your Mission",
-    "sub": "Let's see what today's mission has for us",
-    "description": "Play, collect stars, and win weekly prizes! 🚀",
-    "uploadVideo": "Upload your video & wait for the \"OK\"",
-    "upload": "Fly it over"
+    "title": "Today's Target 🎯",
+    "sub": "Let's see what the gang is cooking up today",
+    "description": "Complete the task, collect stars, and rule the turf! 🚀",
+    "uploadVideo": "Record your proof & send it to HQ",
+    "upload": "Dispatch Proof 📤"
   },
   "Pwelcome": {
-    "title": "Hellooz",
-    "description": "Because we value your child's privacy and your statisfaction, here is a video explaning the whole game idea just to make you comfortable with our app and the idea.",
-    "add" : "Add your child"
+    "title": "Welcome to HQ, Boss 🕶️",
+    "description": "We take your kid's privacy and your peace of mind seriously. Check this quick briefing video to see how the gang operates safely.",
+    "add": "+ Recruited Kid"
   },
   "Pscan": {
-    "title": "Scan the QR code on your child's device",
-    "button": "Confirm",
-    "heading": "Chris has something for you to see",
-    "taskName": "Clean the room",
+    "title": "Scan the operative's device code",
+    "button": "Verify & Approve",
+    "heading": "Recruit submitted a proof video!",
+    "taskName": "Clean the Hideout",
     "submittedTime": "Submitted today at 4 PM",
-    "accept": "Accept",
-    "redo": "Redo"
+    "accept": "Approve & Reward 🌟",
+    "redo": "Send Back for Redo 🔄"
   },
   "Ptoggle": {
-    "pending": "Pending",
-    "history": "History"
+    "pending": "Review Desk",
+    "history": "Passed Missions"
   },
   "Pmenu": {
-    "addChild": "+ Add Child"
+    "addChild": "+ Recruit Kid"
   },
   "Pconfirm": {
-    "title": "You're all set",
-    "button": "Done"
+    "title": "All Clear & Verified! 🔒",
+    "button": "Back to Control Room"
+  },
+  "admin": {
+    "portalTitle": "HQ Admin Terminal 🛡️",
+    "portalSub": "Protected by Biometric Security Guard",
+    "enterPortal": "Access Command Center",
+    "stats": "Turf Analytics 📊",
+    "playersDidMission": "Operatives Completed Mission",
+    "playersOpened": "Active Operatives Online",
+    "pendingApprovals": "Pending Review Queue",
+    "recentActivities": "Recent Operations ⚡",
+    "pauseGame": "Freeze All Operations ⏸️",
+    "pauseGameSub": "Temporarily locks the entire game until HQ reactivates.",
+    "pause": "Freeze Game",
+    "endSeason": "Conclude Turf Season 🏁",
+    "endSeasonSub": "Locks current scores and crowns the ultimate gang champions!",
+    "missionAssignTitle": "Dispatch New Mission 📜",
+    "challengeName": "Operation Name",
+    "xpReward": "Bounty XP",
+    "instructionVideo": "Briefing Video",
+    "chooseVideo": "Drop Briefing Video Here",
+    "chooseVideoSub": "MP4 or MOV max 50MB",
+    "createChallenge": "Launch Operation 🚀",
+    "databaseTitle": "Gang Registry & DB 🗂️",
+    "selectDatabase": "Select Registry",
+    "children": "Operatives (Kids)",
+    "parents": "Chiefs (Parents)",
+    "admins": "HQ Command (Admins)",
+    "tableHeaders": {
+      "name": "Alias",
+      "avatar": "Badge",
+      "id": "ID",
+      "status": "Status",
+      "streak": "Streak",
+      "points": "Points"
+    }
   }
 }

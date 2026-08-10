@@ -62,7 +62,7 @@ export default function HistoryCard({ day, translations, image, sticker }: Histo
           {/* Text Container */}
           <motion.div
             layout
-            className={`flex flex-col ${isExpanded ? "" : "mr-15"}`}
+            className={`flex flex-col ${isExpanded ? "" : "me-4 ms-2"}`}
           >
             <p>{translations.taskName}</p>
             <p>{translations.time}</p>

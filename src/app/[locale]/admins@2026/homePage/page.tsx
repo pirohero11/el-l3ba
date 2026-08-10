@@ -8,7 +8,7 @@ import { Toggle } from "@/components/base/toggle/toggle";
 export default async function AdminPage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     setRequestLocale(locale);
-    const t = await getTranslations("Pscan");
+    const t = await getTranslations("admin");
 
     return (
         <div className='flex flex-col items-center h-full w-full justify-center max-w-screen'>
@@ -20,26 +20,26 @@ export default async function AdminPage({ params }: { params: Promise<{ locale: 
                 <div className='w-full flex flex-col gap-5 mb-5'>
                     <div className='w-full h-60 bg-white p-5 rounded-2xl border border-black/30 flex flex-col gap-3'>
                         <div>
-                            <p className='text-xl'>Stats</p>
+                            <p className='text-xl'>{t("stats")}</p>
                         </div>
                         <div className='flex flex-row'>
                             <div className='flex flex-col'>
                                 <CleanPercentageChart percentage={50}></CleanPercentageChart>
-                                <p className='text-center'>Players did mission</p>
+                                <p className='text-center'>{t("playersDidMission")}</p>
                             </div>
                             <div className='flex flex-col'>
                                 <CleanPercentageChart percentage={70}></CleanPercentageChart>
-                                <p className='text-center'>Players opened</p>
+                                <p className='text-center'>{t("playersOpened")}</p>
                             </div>
                             <div className='flex flex-col'>
                                 <CleanPercentageChart percentage={50}></CleanPercentageChart>
-                                <p className='text-center'>Pending approvals</p>
+                                <p className='text-center'>{t("pendingApprovals")}</p>
                             </div>
                         </div>
                     </div>
                     <div className='w-full h-60 bg-white p-5 rounded-2xl border border-black/30 flex flex-col gap-3'>
                         <div>
-                            <p className='text-xl'>Recent activities</p>
+                            <p className='text-xl'>{t("recentActivities")}</p>
                         </div>
                         <div className='flex flex-col w-full max-h-40 bg-admin-slate/10 rounded-lg py-3 gap-5 overflow-y-auto overflow-x-hidden border-2 border-black'>
                             <LeaderboardName name={"Pierre"} rank={50} image={"avtr2"}/>
@@ -51,21 +51,21 @@ export default async function AdminPage({ params }: { params: Promise<{ locale: 
                     </div>
                     <div className='w-full h-45 bg-white p-5 rounded-2xl border border-black/30 flex flex-col items-center gap-4'>
                         <div>
-                            <p className='text-xl'>Pause Game</p>
-                            <p>This toggle pauses the game for a while until you deactivate it.</p>
+                            <p className='text-xl'>{t("pauseGame")}</p>
+                            <p>{t("pauseGameSub")}</p>
                         </div>
                         <div className='flex items-center gap-4 bg-red-500/30 w-fit h-15 rounded-2xl p-3'>
-                            <p className='text-sm'>Pause</p>
+                            <p className='text-sm'>{t("pause")}</p>
                             <Toggle size="md" />
                         </div>
                     </div>
                     <div className='w-full h-50 bg-white p-5 rounded-2xl border border-black/30 flex flex-col items-center gap-4'>
                         <div className='w-full'>
-                            <p className='text-xl'>End Season</p>
-                            <p className='text-sm'>No more missions, streaks or points, and the ones on the top leaderboard are displayed as the winners of the season</p>
+                            <p className='text-xl'>{t("endSeason")}</p>
+                            <p className='text-sm'>{t("endSeasonSub")}</p>
                         </div>
                         <button className="w-40 rounded-lg bg-red-500/30 h-15">
-                            <p>End Season</p>
+                            <p>{t("endSeason")}</p>
                         </button>
                     </div>
                 </div>

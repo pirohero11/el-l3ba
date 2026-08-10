@@ -6,7 +6,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 export default async function DatabasePage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     setRequestLocale(locale);
-    const t = await getTranslations("Pscan");
+    const t = await getTranslations("admin");
 
 
     return (
@@ -17,27 +17,27 @@ export default async function DatabasePage({ params }: { params: Promise<{ local
                         <ArrowBackIcon className="w-2 h-2" />
                     </Button>
                 </Link>
-                <h1 className="text-2xl font-bold text-bright-purple mt-1">Database Management</h1>
+                <h1 className="text-2xl font-bold text-bright-purple mt-1">{t("databaseTitle")}</h1>
             </div>
             <main className="h-screen w-[90%] flex bg-white rounded-2xl mb-3 border-2 border-black/30 flex-col items-center">
                 <div className="h-15 flex justify-between w-full p-3 border-b-3 border-b-black items-center">
                     <select className="rounded-full border border-black w-50 text-center h-9" name="database" id="database">
-                        <option value="">Select Database</option>
-                        <option value="users">Children</option>
-                        <option value="missions">Parents</option>
-                        <option value="submissions">Admins</option>
+                        <option value="">{t("selectDatabase")}</option>
+                        <option value="users">{t("children")}</option>
+                        <option value="missions">{t("parents")}</option>
+                        <option value="submissions">{t("admins")}</option>
                     </select>
                 </div>
                 <div className="w-[95%] h-full p-3 overflow-y-auto flex flex-col bg-admin-slate/10 m-3">
                     <table className="w-[90%] mx-auto border-collapse text-left text-sm text-gray-700 border border-gray-200 rounded-lg">
                         <thead className="bg-gray-50 border-b border-gray-200 text-xs uppercase text-gray-500">
                             <tr>
-                                <th className="px-4 py-3">Name</th>
-                                <th className="px-4 py-3">Avatar</th>
-                                <th className="px-4 py-3">ID</th>
-                                <th className="px-4 py-3">Status</th>
-                                <th className="px-4 py-3">Streak</th>
-                                <th className="px-4 py-3">Points</th>
+                                <th className="px-4 py-3">{t("tableHeaders.name")}</th>
+                                <th className="px-4 py-3">{t("tableHeaders.avatar")}</th>
+                                <th className="px-4 py-3">{t("tableHeaders.id")}</th>
+                                <th className="px-4 py-3">{t("tableHeaders.status")}</th>
+                                <th className="px-4 py-3">{t("tableHeaders.streak")}</th>
+                                <th className="px-4 py-3">{t("tableHeaders.points")}</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-200 bg-white">

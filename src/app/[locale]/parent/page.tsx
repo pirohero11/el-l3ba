@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { Play as PlayArrowIcon } from 'lucide-react';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default async function ParentPage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
@@ -8,7 +9,10 @@ export default async function ParentPage({ params }: { params: Promise<{ locale:
     const t = await getTranslations("Pwelcome");
     return (
         <div className="flex flex-col items-center h-screen w-full gap-10 p-4">
-            <div className="flex flex-col items-center justify-center w-full py-5 mt-10 gap-2 text-center">
+            <div className="w-full max-w-md flex justify-end pt-2 px-2">
+                <LanguageSwitcher variant="compact" />
+            </div>
+            <div className="flex flex-col items-center justify-center w-full py-2 gap-2 text-center">
                 <p className="text-bright-purple font-black text-3xl">{t("title")}</p>                
                 <p className="text-admin-slate/65 font-black text-center px-2 w-[90%] text-sm">{t("description")}</p>                
             </div>

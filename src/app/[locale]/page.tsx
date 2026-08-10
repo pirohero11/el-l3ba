@@ -20,7 +20,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   return (
     <div className="flex flex-col gap-8 items-center max-h-screen">
       {/* header */}
-      <div className="flex flex-row justify-end h-1/5 w-full gap-4 mt-5 mr-5">
+      <div className="flex flex-row justify-end h-1/5 w-full gap-4 mt-5 px-5">
         <Link href="/en">
           <button className={getButtonStyles(locale === "en")}>En</button>
         </Link>
