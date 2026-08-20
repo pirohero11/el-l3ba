@@ -10,10 +10,12 @@ import {
 
 interface BiometricGuardProps {
     role: 'parent' | 'admin';
+    pageKey?: string;
+    pageTitle?: string;
     children: React.ReactNode;
 }
 
-export default function BiometricGuard({ role, children }: BiometricGuardProps) {
+export default function BiometricGuard({ role, pageKey, pageTitle, children }: BiometricGuardProps) {
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
     const [isAuthenticating, setIsAuthenticating] = useState<boolean>(true);
     const [statusText, setStatusText] = useState<string>('Verifying fingerprint biometric...');
@@ -24,11 +26,13 @@ export default function BiometricGuard({ role, children }: BiometricGuardProps) 
         setHasError(false);
         setStatusText('Requesting fingerprint authentication...');
 
-        // Check if credential exists, if not, auto-enroll first passkey
-        if (!hasRegisteredCredential(role)) {
-            setStatusText('Enrolling device passkey / fingerprint...');
+        // Check if credential exists for role/page, if not, auto-enroll first passkey
+        const exists = await hasRegisteredCredential(role, pageKey);
+        if (!exists) {
+            setStatusText('Enrolling device passkey / fingerprint for page...');
             const defaultLabel = role === 'admin' ? 'Admin Security' : 'Parent Security';
-            const regResult = await registerBiometricCredential(defaultLabel, role);
+            const allowedPages = pageKey ? [pageKey, '*'] : ['*'];
+            const regResult = await registerBiometricCredential(defaultLabel, role, allowedPages);
             if (regResult.success) {
                 setIsAuthenticated(true);
                 setIsAuthenticating(false);
@@ -36,8 +40,8 @@ export default function BiometricGuard({ role, children }: BiometricGuardProps) 
             }
         }
 
-        // Trigger automatic OS fingerprint scan prompt
-        const authResult = await authenticateBiometricCredential(role);
+        // Trigger OS fingerprint scan prompt
+        const authResult = await authenticateBiometricCredential(role, pageKey);
 
         if (authResult.success) {
             setIsAuthenticated(true);
@@ -47,10 +51,10 @@ export default function BiometricGuard({ role, children }: BiometricGuardProps) 
             setIsAuthenticating(false);
             setStatusText(authResult.message || 'Biometric scan failed or cancelled.');
         }
-    }, [role]);
+    }, [role, pageKey]);
 
     useEffect(() => {
-        // Automatically trigger fingerprint prompt on page entrance (InstaPay style)
+        // Automatically trigger fingerprint prompt on page entrance
         triggerBiometricAuth();
     }, [triggerBiometricAuth]);
 
@@ -68,7 +72,7 @@ export default function BiometricGuard({ role, children }: BiometricGuardProps) 
             {/* Glowing Accent Ring */}
             <div className="absolute w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-3xl animate-pulse" />
 
-            {/* InstaPay-style Security Overlay */}
+            {/* Security Overlay */}
             <div
                 onClick={!isAuthenticating ? triggerBiometricAuth : undefined}
                 className="relative z-20 flex flex-col items-center gap-6 p-8 rounded-3xl bg-slate-900/90 border border-purple-500/30 backdrop-blur-xl shadow-[0_20px_50px_rgba(114,9,183,0.3)] max-w-sm w-11/12 text-center cursor-pointer group"
@@ -76,7 +80,7 @@ export default function BiometricGuard({ role, children }: BiometricGuardProps) 
                 {/* Security Badge */}
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-bold uppercase tracking-wider">
                     <ShieldCheck className="w-4 h-4 text-purple-400" />
-                    <span>{role.toUpperCase()} BIOMETRIC SECURITY</span>
+                    <span>{pageTitle || `${role.toUpperCase()} BIOMETRIC GUARD`}</span>
                 </div>
 
                 {/* Animated Fingerprint Scanner Circle */}
@@ -114,7 +118,7 @@ export default function BiometricGuard({ role, children }: BiometricGuardProps) 
                 {!isAuthenticating && (
                     <div className="flex items-center gap-2 text-xs font-bold text-purple-400 group-hover:text-purple-300 transition-colors mt-2">
                         <Lock className="w-3.5 h-3.5" />
-                        <span>Tap anywhere to trigger scanner</span>
+                        <span>Tap anywhere to scan fingerprint</span>
                     </div>
                 )}
             </div>

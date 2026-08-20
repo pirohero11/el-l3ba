@@ -45,8 +45,8 @@ export default function FingerprintAuth({
         checkSensor();
     }, [role]);
 
-    const setRegisteredState = () => {
-        const registered = hasRegisteredCredential(role);
+    const setRegisteredState = async () => {
+        const registered = await hasRegisteredCredential(role);
         setIsRegistered(registered);
         if (!registered) {
             setActiveTab('register');
