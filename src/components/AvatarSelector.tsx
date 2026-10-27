@@ -23,7 +23,12 @@ const avatars = [
 const ExtendedAvatars = [...avatars, ...avatars, ...avatars, ...avatars, ...avatars];
 const ITEM_WIDTH = 120; 
 
-export default function AvatarSelector() {
+interface AvatarSelectorProps {
+  name?: string;
+  onSelect?: (src: string) => void;
+}
+
+export default function AvatarSelector({ name = 'ImageName', onSelect }: AvatarSelectorProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
@@ -85,8 +90,17 @@ export default function AvatarSelector() {
     }
   };
 
+  const selectedSrc = ExtendedAvatars[activeIndex]?.src ?? '';
+
+  useEffect(() => {
+    if (selectedSrc && onSelect) {
+      onSelect(selectedSrc);
+    }
+  }, [selectedSrc, onSelect]);
+
   return (
     <div className="relative w-full h-[250px] flex items-center justify-center overflow-hidden select-none mirror-rtl">
+      {name && <input type="hidden" name={name} value={selectedSrc} />}
       {/* Selection Circle - Centered exactly in the middle of the parent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
         <div className="size-40 rounded-full border-4 border-bright-purple shadow-[0_0_25px_rgba(114,9,183,0.6)] bg-white/5 backdrop-blur-[2px]" />

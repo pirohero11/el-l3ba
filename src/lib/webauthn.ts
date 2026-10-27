@@ -83,8 +83,9 @@ export async function getStoredCredentials(role: string, pageKey?: string): Prom
         }
     }
 
-    // 2. Fallback or merge with localStorage
-    if (credentials.length === 0 && typeof window !== 'undefined') {
+    // 2. Fallback to localStorage ONLY if Supabase is not configured or failed to fetch
+    // If Supabase is fully configured, we skip localStorage to enforce strict database-only access.
+    if (!isSupabaseConfigured() && credentials.length === 0 && typeof window !== 'undefined') {
         const localDataStr = localStorage.getItem(`el_l3ba_webauthn_${role}`);
         if (localDataStr) {
             try {
